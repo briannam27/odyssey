@@ -15,7 +15,7 @@
             }
             .right-column {
                 flex: 1;
-                padding: 10px;
+                padding: 50px;
                 text-align: right;
             }
         </style>
@@ -28,6 +28,7 @@
         <div class="container">
             <div id="game" class="column"></div>
             <div class="right-column"> <!-- setting up right column / inventory -->
+                <h2>Inventory</h2>
                 <p>Wood Inventory: <span id="woodCount">0</span></p> <!-- setting wood count to zero for start of game -->
             </div>
         </div>
@@ -48,9 +49,7 @@
                 `;
                 // creates the chop wood button and the inventory column
             }
-        </script>
-
-        <script>
+            
             function chopWood() {
                 woodCount += 1
                 document.getElementId('woodCount').innerText = woodCount;
@@ -60,3 +59,4 @@
         
     </body>
 </html>
+
