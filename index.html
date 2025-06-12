@@ -4,27 +4,49 @@
         <title> Odyssey </title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            .container {
+                display: flex;
+            }
+            .column {
+                flex: 1;
+                padding: 10px;
+            }
+            .right-column {
+                flex: 1;
+                padding: 10px;
+                text-align: right;
+            }
+        </style>
     </head>
     <body> 
         <h1>Odyssey</h1>
-        <p>Welcome, Odysseus. Begin your journey?</p>
-        <button onclick="startGame()">Start</button>
+        <p id="welcomeMessage">Welcome, Odysseus. Begin your journey?</p>
+        <button id="startButton" onclick="startGame()">Start</button>
 
-        <div id="game"></div>
-        <p>Wood Inventory: <span id="woodCount">0</span></p>
+        <div class="container">
+            <div id="game" class="column"></div>
+            <div class="right-column"> <!-- setting up right column / inventory -->
+                <p>Wood Inventory: <span id="woodCount">0</span></p> <!-- setting wood count to zero for start of game -->
+            </div>
+        </div>
         
         <script>
             let woodCount = 0;
             function startGame() {
                 cosole.log("Game has begun");
+                document.getElementById('welcomeMessage').style.display = 'none'; //removing welcome message from sight
+                document.getElementById('startButton').style.display = 'none'; //removing start button from sight
                 const game = document.getElementById('game');
-                game.innerHTML = '
+                game.innerHTML = ` 
                     <button onclick="chopWood()">Chop</button>
                     <div class="column">
                         <h2>Inventory</h2>
                         <p>Wood: </p>
                     </div>
-                ';
+                `;
+                // creates the chop wood button and the inventory column
             }
         </script>
 
