@@ -46,6 +46,7 @@
         <script>
             let woodCount = 0;
             let numChopped = 1;
+            // --------------------- MAIN FUNCTION OF THE GAME ---------------------
             function startGame() {
                 console.log("The journey has begun");
                 document.getElementById('welcomeMessage').style.display = 'none'; //removing welcome message from sight
@@ -65,14 +66,16 @@
                 document.getElementById('showAxe').style.display = 'none'; // initializing the axe to be unseen until unlocked
             }
 
+            // --------------------- FUNCTION TO ADD A MSG TO THE CONSOLE ---------------------
             function message(msg) {
                 var msgDiv = document.getElementById('log-output');
                 msgDiv.innerHTML += msg + '<br>'; // must add a line break (\n) to end of every message
             }
             
+            // --------------------- CHOP WOOD BUTTON FUNCTIONALITY ---------------------
             function chopWood() {
-                woodCount += numChopped
-                message(numChopped + " pieces of wood have been chopped!")
+                woodCount += numChopped;
+                message(numChopped + " pieces of wood have been chopped!");
                 document.getElementById('woodCount').innerText = woodCount;
                 document.getElementById('chopButton').style.display = 'block';
                 //console.log("One log of wood has been chopped, current count: " + woodCount);
@@ -81,6 +84,7 @@
                 }
             }
 
+            // --------------------- CREATING/BUYING AN AXE ---------------------
             function makeAxe() {    // making an axe allows you to chop 2x the amount of wood
                 woodCount -= 20;
                 document.getElementById('woodCount').innerText = woodCount;
