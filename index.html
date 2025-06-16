@@ -87,7 +87,7 @@
                 var msgDiv = document.getElementById('left-column');
                 var newMsg = document.createElement('div');
                /*  msgDiv.innerHTML += '<b>' + numLines + '</b>  ' + msg + '<br>'; */ // must add a line break (\n) to end of every message
-                msgDiv.innerHTML += '<b>' + numLines + '</b>' + '\t\t' + msg + '<br><br>';
+                msgDiv.innerHTML += numLines + '\t\t' + msg + '<br><br>';
                 msgDiv.appendChild(newMsg);
                 numLines++;
 
