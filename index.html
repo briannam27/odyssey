@@ -30,6 +30,8 @@
             <div class="right-column"> <!-- setting up right column / inventory -->
             </div>
         </div>
+
+        <div id="log-output"></div>
         
         <script>
             let woodCount = 0;
@@ -38,21 +40,37 @@
                 document.getElementById('welcomeMessage').style.display = 'none'; //removing welcome message from sight
                 document.getElementById('startButton').style.display = 'none'; //removing start button from sight
                 const game = document.getElementById('game');
+                var num = 1;
                 game.innerHTML = ` 
-                    <button id="chopButton" onclick="chopWood()">Chop</button>
+                    <button id="chopButton" onclick="chopWood(num)">Chop</button>
                     <div class="column"> 
                         <h2>Inventory</h2>
                         <p>Wood Inventory: <span id="woodCount">0</span></p> <!-- setting wood count to zero for start of game, inventory is on the left side column of the screen -->
+                        
+                        <h2>Tools</h2>
+                        <p id="axe">Axe: 1</p>
+                        document.getElementById('axe').style.display = 'none'; //initializing the axe to be unseen until unlocked
                     </div>
                 `;
-                // creates the chop wood button and the inventory column
+            }
+
+            function message(msg) {
+                var msgDiv = document.getElementById('log-output');
+                msgDiv.innerHTML += msg + '<br>'; // must add a line break (\n) to end of every message
             }
             
-            function chopWood() {
-                woodCount += 1
+            function chopWood(num) {
+                woodCount += num
+                message(num + " pieces of wood have been chopped!")
                 document.getElementById('woodCount').innerText = woodCount;
                 document.getElementById('chopButton').style.display = 'block';
-                console.log("One log of wood has been chopped, current count: " + woodCount);
+                //console.log("One log of wood has been chopped, current count: " + woodCount);
+            }
+
+            function makeAxe() {    // making an axe allows you to chop 2x the amount of wood
+                woodCount -= 5;
+                document.getElementById('woodCount').innerText = woodCount;
+                document.getElementById('axe').style.display = 'block';
             }
         </script>
         
