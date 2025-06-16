@@ -29,8 +29,8 @@
                 flex-direction: column-reverse; /* keeps the most recent lines in view on the console */
                 margin-bottom: 20px;
             }
-
         </style>
+
     </head>
 
     <body> 
@@ -43,7 +43,7 @@
 
         <div class="container">
             <div id="game" class="column"></div>
-            <div class="right-column"> <!-- setting up right column / inventory -->
+            <!-- <div class="right-column"> setting up right column/inventory -->
             </div>
         </div>
         
@@ -57,7 +57,7 @@
             // --------------------- FUNCTION TO ADD A MSG TO THE CONSOLE ---------------------
             function message(msg) {
                 var msgDiv = document.getElementById('log-output');
-                msgDiv.innerHTML += "<b>" + numLines + "</b>" + "  " + msg + '<br>'; // must add a line break (\n) to end of every message
+                msgDiv.innerHTML += "<b>" + numLines + "</b>" + msg + '<br>'; // must add a line break (\n) to end of every message
                 numLines++;
             }
 
