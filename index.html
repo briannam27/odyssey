@@ -48,10 +48,13 @@
                         <p>Wood Inventory: <span id="woodCount">0</span></p> <!-- setting wood count to zero for start of game, inventory is on the left side column of the screen -->
                         
                         <h2>Tools</h2>
-                        <p id="axe">Axe: 1</p>
-                        document.getElementById('axe').style.display = 'none'; //initializing the axe to be unseen until unlocked
+                        <p id="showAxe">Axe: 1</p>
+                        document.getElementById('showAxe').style.display = 'none'; //initializing the axe to be unseen until unlocked
                     </div>
                 `;
+                if (woodCount >= 20) {
+                    <button id="makeAxe" onclick="makeAxe()">Buy Axe</button>
+                }
             }
 
             function message(msg) {
@@ -68,9 +71,9 @@
             }
 
             function makeAxe() {    // making an axe allows you to chop 2x the amount of wood
-                woodCount -= 5;
+                woodCount -= 20;
                 document.getElementById('woodCount').innerText = woodCount;
-                document.getElementById('axe').style.display = 'block';
+                document.getElementById('showAxe').style.display = 'block';
             }
         </script>
         
