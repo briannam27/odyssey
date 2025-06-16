@@ -35,14 +35,15 @@
         
         <script>
             let woodCount = 0;
+            let numChopped = 1;
             function startGame() {
                 console.log("The journey has begun");
                 document.getElementById('welcomeMessage').style.display = 'none'; //removing welcome message from sight
                 document.getElementById('startButton').style.display = 'none'; //removing start button from sight
                 const game = document.getElementById('game');
-                var num = 1;
+                //var num = 1;
                 game.innerHTML = ` 
-                    <button id="chopButton" onclick="chopWood(num)">Chop</button>
+                    <button id="chopButton" onclick="chopWood()">Chop</button>
                     <div class="column"> 
                         <h2>Inventory</h2>
                         <p>Wood Inventory: <span id="woodCount">0</span></p> <!-- setting wood count to zero for start of game, inventory is on the left side column of the screen -->
@@ -59,9 +60,9 @@
                 msgDiv.innerHTML += msg + '<br>'; // must add a line break (\n) to end of every message
             }
             
-            function chopWood(num) {
-                woodCount += num
-                message(num + " pieces of wood have been chopped!")
+            function chopWood() {
+                woodCount += numChopped
+                message(numChopped + " pieces of wood have been chopped!")
                 document.getElementById('woodCount').innerText = woodCount;
                 document.getElementById('chopButton').style.display = 'block';
                 //console.log("One log of wood has been chopped, current count: " + woodCount);
@@ -74,7 +75,7 @@
                 woodCount -= 20;
                 document.getElementById('woodCount').innerText = woodCount;
                 document.getElementById('showAxe').style.display = 'block';
-                document.getElementById('chopButton').onclick = function() { chopWood(2); }; // changes the amount of wood chopped by the Chop button from 1 to 2
+                numChopped = 2; // changes the amount of wood chopped by the Chop button from 1 to 2 
                 document.getElementById('makeAxe').remove(); // removes the "Buy Axe" button after buying one
             }
         </script>
