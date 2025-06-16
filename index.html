@@ -12,26 +12,30 @@
             .left-column {
                 /* background-color: black;
                 color: white; */
+                flex: 1;
                 color: black;
                 font-family: monospace;
                 padding: 50px;
                 /* height: 140px; so it only shows 7 lines of the console */
                 width: 300px;
                 text-wrap: true;
-                /* overflow-y: auto; */
+                max-height: 300px;
                 overflow-x: auto;
                 display: flex;
-                /* flex-direction: column-reverse; keeps the most recent lines in view on the console */
+                flex-direction: column-reverse;/*  keeps the most recent lines in view on the console  */
                 margin-bottom: 20px;
             }
             .middle-column {
                 flex: 1;
                 padding: 50px;
+                width: 300px;
+                text-align: center;
             }
             .right-column {
                 flex: 1;
                 padding: 50px;
                 text-align: right;
+                width: 300px;
             }/* 
             #log-output {
                 background-color: black;
@@ -81,7 +85,7 @@
             function message(msg) {
                 var msgDiv = document.getElementById('left-column');
                /*  msgDiv.innerHTML += '<b>' + numLines + '</b>  ' + msg + '<br>'; */ // must add a line break (\n) to end of every message
-                msgDiv.innerHTML += numLines + '\t' + msg + '<br>';
+                msgDiv.innerHTML += numLines + '\t\t' + msg + '<br><br>';
                 numLines++;
             }
 
@@ -107,7 +111,7 @@
             // --------------------- CHOP WOOD BUTTON FUNCTIONALITY ---------------------
             function chopWood() {
                 woodCount += numChopped;
-                message(numChopped + " piece(s) of wood have been chopped!\n");
+                message(numChopped + " piece(s) of wood have been chopped!");
                 document.getElementById('woodCount').innerText = woodCount;
                 document.getElementById('chopButton').style.display = 'block';
                 //console.log("One log of wood has been chopped, current count: " + woodCount);
