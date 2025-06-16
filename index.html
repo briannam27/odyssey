@@ -31,7 +31,7 @@
     </head>
     <body> 
         
-        <!-- <div id="log-output"></div> -->
+        <div id="log-output"></div>
 
         <h1>Odyssey</h1>
         <p id="welcomeMessage">Welcome, Odysseus. Begin your journey?</p>
@@ -76,7 +76,7 @@
             // --------------------- CHOP WOOD BUTTON FUNCTIONALITY ---------------------
             function chopWood() {
                 woodCount += numChopped;
-                message(numChopped + " pieces of wood have been chopped!");
+                message(numChopped + " pieces of wood have been chopped!\n");
                 document.getElementById('woodCount').innerText = woodCount;
                 document.getElementById('chopButton').style.display = 'block';
                 //console.log("One log of wood has been chopped, current count: " + woodCount);
@@ -89,9 +89,10 @@
             function makeAxe() {    // making an axe allows you to chop 2x the amount of wood
                 woodCount -= 20;
                 document.getElementById('woodCount').innerText = woodCount;
+                message("An axe was purchased\n");
                 document.getElementById('showAxe').style.display = 'block';
                 numChopped = 2; // changes the amount of wood chopped by the Chop button from 1 to 2 
-                document.getElementById('makeAxe').disable = true; // disables the "Buy Axe" button after buying one
+                document.getElementById('makeAxe').disabled = true; // disables the "Buy Axe" button after buying one
             }
         </script>
         
