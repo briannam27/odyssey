@@ -28,8 +28,6 @@
         <div class="container">
             <div id="game" class="column"></div>
             <div class="right-column"> <!-- setting up right column / inventory -->
-                <h2>Inventory</h2>
-                <p>Wood Inventory: <span id="woodCount">0</span></p> <!-- setting wood count to zero for start of game -->
             </div>
         </div>
         
@@ -42,9 +40,9 @@
                 const game = document.getElementById('game');
                 game.innerHTML = ` 
                     <button id="chopButton" onclick="chopWood()">Chop</button>
-                    <div class="column">
+                    <div class="column"> 
                         <h2>Inventory</h2>
-                        <p>Wood: </p>
+                        <p>Wood Inventory: <span id="woodCount">0</span></p> <!-- setting wood count to zero for start of game, inventory is on the left side column of the screen -->
                     </div>
                 `;
                 // creates the chop wood button and the inventory column
