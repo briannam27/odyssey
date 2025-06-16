@@ -36,12 +36,12 @@
         <script>
             let woodCount = 0;
             function startGame() {
-                cosole.log("Game has begun");
+                console.log("Game has begun");
                 document.getElementById('welcomeMessage').style.display = 'none'; //removing welcome message from sight
                 document.getElementById('startButton').style.display = 'none'; //removing start button from sight
                 const game = document.getElementById('game');
                 game.innerHTML = ` 
-                    <button onclick="chopWood()">Chop</button>
+                    <button id = "chopButton" onclick="chopWood()">Chop</button>
                     <div class="column">
                         <h2>Inventory</h2>
                         <p>Wood: </p>
@@ -53,10 +53,10 @@
             function chopWood() {
                 woodCount += 1
                 document.getElementId('woodCount').innerText = woodCount;
+                document.getElementById('chopButton').style.display = 'block';
                 console.log("One log of wood has been chopped, current count: " + woodCount);
             }
         </script>
         
     </body>
 </html>
-
