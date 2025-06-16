@@ -21,6 +21,7 @@
             #log-output {
                 background-color: black;
                 color: white;
+                font-family: 'Courier New', monospace;
                 padding: 10px;
                 height: 140px; /* so it only shows 7 lines of the console */
                 overflow-y: auto;
@@ -50,6 +51,7 @@
             // GLOBAL VARIABLES
             let woodCount = 0;
             let numChopped = 1;
+            let numLines = 1; /* line counter for the black console block on the website */
 
             // --------------------- MAIN FUNCTION OF THE GAME ---------------------
             function startGame() {
@@ -73,7 +75,8 @@
             // --------------------- FUNCTION TO ADD A MSG TO THE CONSOLE ---------------------
             function message(msg) {
                 var msgDiv = document.getElementById('log-output');
-                msgDiv.innerHTML += msg + '<br>'; // must add a line break (\n) to end of every message
+                numLines++;
+                msgDiv.innerHTML += numLines + "  " + msg + '<br>'; // must add a line break (\n) to end of every message
             }
             
             // --------------------- CHOP WOOD BUTTON FUNCTIONALITY ---------------------
