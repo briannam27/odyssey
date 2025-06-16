@@ -14,11 +14,11 @@
                 color: white; */
                 color: black;
                 font-family: monospace;
-                padding: 10px;
+                padding: 50px;
                 /* height: 140px; so it only shows 7 lines of the console */
                 width: 300px;
                 text-wrap: true;
-                overflow-y: auto;
+                /* overflow-y: auto; */
                 overflow-x: auto;
                 display: flex;
                 /* flex-direction: column-reverse; keeps the most recent lines in view on the console */
@@ -26,11 +26,11 @@
             }
             .middle-column {
                 flex: 1;
-                padding: 10px;
+                padding: 50px;
             }
             .right-column {
                 flex: 1;
-                padding: 10px;
+                padding: 50px;
                 text-align: right;
             }/* 
             #log-output {
@@ -51,6 +51,7 @@
     <body> 
         
         <div class="container">
+            <h1>Odyssey</h1>
             <div id="left-column" class="left-column"></div>
             <div id="game" class="middle-column"></div>
             <div id="right-column" class="right-column">
@@ -61,7 +62,6 @@
             </div>
         </div>
 
-        <h1>Odyssey</h1>
         <p id="welcomeMessage">Welcome, Odysseus. Begin your journey?</p>
         <button id="startButton" onclick="startGame()">Start</button>
 
