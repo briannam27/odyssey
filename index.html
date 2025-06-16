@@ -18,9 +18,21 @@
                 padding: 50px;
                 text-align: right;
             }
+            #log-output {
+                background-color: black;
+                color: white;
+                padding: 10px;
+                max-height: 140px; /* so it only shows 7 lines of the console */
+                overflow-y: auto;
+                margin-bottom: 20px;
+            }
+
         </style>
     </head>
     <body> 
+        
+        <!-- <div id="log-output"></div> -->
+
         <h1>Odyssey</h1>
         <p id="welcomeMessage">Welcome, Odysseus. Begin your journey?</p>
         <button id="startButton" onclick="startGame()">Start</button>
@@ -30,8 +42,6 @@
             <div class="right-column"> <!-- setting up right column / inventory -->
             </div>
         </div>
-
-        <div id="log-output"></div>
         
         <script>
             let woodCount = 0;
@@ -76,7 +86,7 @@
                 document.getElementById('woodCount').innerText = woodCount;
                 document.getElementById('showAxe').style.display = 'block';
                 numChopped = 2; // changes the amount of wood chopped by the Chop button from 1 to 2 
-                document.getElementById('makeAxe').remove(); // removes the "Buy Axe" button after buying one
+                document.getElementById('makeAxe').disable = true; // disables the "Buy Axe" button after buying one
             }
         </script>
         
