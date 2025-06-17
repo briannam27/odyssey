@@ -66,8 +66,14 @@
         <button id="startButton" onclick="startGame()">Start</button>
 
         <div class="container">
-            <div id="game" class="column"></div>
-            <div class="right-column"></div> <!-- setting up right column/inventory -->
+            <div id="game" class="middle-column"></div>
+            <div class="right-column">
+                <h2>Inventory</h2>
+                        <p>Wood Inventory: <span id="woodCount">0</span></p> <!-- setting wood count to zero for start of game, inventory is on the left side column of the screen -->
+                        
+                <h2>Tools</h2>
+                        <p id="showAxe">Axe: 1</p>
+            </div> <!-- setting up right column/inventory -->
         </div>
         
         <script>
@@ -86,7 +92,7 @@
                 msgDiv.appendChild(newMsg);
                 numLines++;
 
-                if (msgDiv.children.length > maxLines) {
+                if (msgDiv.children.length > maxLines) { // ensures that  there's only 15 lines of messages
                     msgDiv.removeChild(msgDiv.firstChild); 
                 }
             }
@@ -97,17 +103,8 @@
                 document.getElementById('welcomeMessage').style.display = 'none'; //removing welcome message from sight
                 document.getElementById('startButton').style.display = 'none'; //removing start button from sight
                 const game = document.getElementById('game');
-                game.innerHTML = `
-                    <div class="middle-column">  
+                game.innerHTML = `  
                         <button id="chopButton" onclick="chopWood()">Chop</button>
-                    </div>
-                    <div class="right-column"> 
-                        <h2>Inventory</h2>
-                            <p>Wood Inventory: <span id="woodCount">0</span></p> <!-- setting wood count to zero for start of game, inventory is on the left side column of the screen -->
-                        
-                        <h2>Tools</h2>
-                            <p id="showAxe">Axe: 1</p>
-                    </div>
                 `;
                 document.getElementById('showAxe').style.display = 'none'; // initializing the axe to be unseen until unlocked
             }
