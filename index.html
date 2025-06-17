@@ -21,7 +21,7 @@
                 /* max-height: 300px; */
                 /* overflow-x: auto; */
                 display: flex;
-                /* flex-direction: column-reverse; */ /*  keeps the most recent lines in view on the console  */
+                flex-direction: column; /*  keeps the most recent lines in view on the console  */
                 margin-bottom: 20px;
                 word-break: keep-all;
                 p.double {border-style: double;}
@@ -59,12 +59,7 @@
             <h1>Odyssey</h1>
             <div id="left-column" class="left-column"></div>
             <div id="game" class="middle-column"></div>
-            <div id="right-column" class="right-column">
-                <!-- <h2>Inventory</h2>
-                    <p>Wood Inventory: <span id="woodCount">0</span></p>  setting wood count to zero for start of game, inventory is on the right side column of the screen 
-                <h2>Tools</h2>
-                    <p id="showAxe">Axe: 1</p> -->
-            </div>
+            <div id="right-column" class="right-column"></div>
         </div>
 
         <p id="welcomeMessage">Welcome, Odysseus. Begin your journey?</p>
@@ -102,8 +97,10 @@
                 document.getElementById('welcomeMessage').style.display = 'none'; //removing welcome message from sight
                 document.getElementById('startButton').style.display = 'none'; //removing start button from sight
                 const game = document.getElementById('game');
-                game.innerHTML = ` 
-                    <button id="chopButton" onclick="chopWood()">Chop</button>
+                game.innerHTML = `
+                    <div class="middle-column">  
+                        <button id="chopButton" onclick="chopWood()">Chop</button>
+                    </div>
                     <div class="right-column"> 
                         <h2>Inventory</h2>
                             <p>Wood Inventory: <span id="woodCount">0</span></p> <!-- setting wood count to zero for start of game, inventory is on the left side column of the screen -->
