@@ -21,7 +21,7 @@
                 /* max-height: 300px; */
                 /* overflow-x: auto; */
                 display: flex;
-                flex-direction: column-reverse; /*  keeps the most recent lines in view on the console  */
+                /* flex-direction: column-reverse; */ /*  keeps the most recent lines in view on the console  */
                 margin-bottom: 20px;
                 word-break: keep-all;
                 p.double {border-style: double;}
@@ -91,11 +91,9 @@
                 msgDiv.appendChild(newMsg);
                 numLines++;
 
-                
                 if (msgDiv.children.length > maxLines) {
                     msgDiv.removeChild(msgDiv.firstChild); 
                 }
-
             }
 
             // --------------------- MAIN FUNCTION OF THE GAME ---------------------
